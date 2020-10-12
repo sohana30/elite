@@ -21,9 +21,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('csv_file', 'CsvFile@index');
+Route::get('/csv_file', [CsvFile::class,'index']);
 
 
-Route::post('csv_file/import', 'CsvFile@csv_import')->name('import');
+Route::post('/csv_file/import', [CsvFile::class,'csv_import'])->name('import');
 
 
